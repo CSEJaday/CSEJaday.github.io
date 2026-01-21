@@ -1,0 +1,51 @@
+/* Structure */
+body {
+    background: lightcoral;
+}
+
+/* Typography */
+h1 {
+    color: blanchedalmond;
+}
+
+#main-title {
+    font-style: helvetica;
+}
+
+h2 {
+    color: darkred;
+}
+
+#h2-content {
+    font-style: oblique;
+}
+
+p {
+    color: maroon;
+}
+
+#para-text {
+    font-style: helvetica;
+}
+
+/* Navigation */
+a {
+    text-decoration: none;
+}
+
+#basic-h-link {
+    color: firebrick;
+}
+
+#assignment-2-link {
+    color: crimson;
+}
+
+ul {
+    color: darkred;
+}
+
+#git-link {
+    font-style: times;
+    color: lemonchiffon;
+}

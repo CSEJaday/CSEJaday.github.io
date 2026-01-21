@@ -1,0 +1,68 @@
+/* Structure */
+body {
+    background: #F27052;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#content {
+    background: #F28B50;
+    width: 75%;
+    margin: auto;
+    padding: 0 5px;
+    border-radius: 5px;
+}
+/* Navigation */
+a {
+    text-decoration: none;
+    background: #4D4373;
+    color: azure;
+    padding: 4px;
+    border-radius: 3px;
+}
+
+a:hover {
+    background: #BF545D;
+}
+
+/* Images */
+img {
+    padding: 10px;
+    border:5px solid #4D4373;
+    border-radius: 5px;
+}
+/* Tables */
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid black;
+    padding: 4px;
+}
+
+th {
+    background: #BF545D;
+    color: azure;
+}
+
+td {
+    background: #BF545D;
+    color: azure;
+}
+
+/* Typography */
+h1 {
+    color: azure;
+}
+
+h2 {
+    color: azure;
+}
+
+ul {
+    color: azure;
+}
+
+p {
+    color: azure;
+}
+
