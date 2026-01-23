@@ -2,24 +2,70 @@
 <!--Main Page-->
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>CSCE 242: Website Applications</title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <body>
-        <div id="content">
-        <h1 id="main-title">CSCE 242: Website Applications</h1>
-        <h2 id="h2-content">Jada Young</h2>
-        <p id="para-text">In this class we will be using HTML and CSS to build and
-            design our own personal website. We will also be using 
-            Java for functionality when creating the website.
-        </p>
-        <a id="git-link" href="https://github.com/CSEJaday/CSEJaday.github.io/tree/main/csce242">Git Hub Code Repo Link</a>
-        <h2 id="h2-content">Assignments</h2>
-        <ul>
-            <li><a id="basic-h-link" href="assignments/01-basic-html/index.html">Basic HTML</a></li>
-           <li><a id="assignment-2-link" href="assignments/assignment-2/index.html">Assignment 2</a></li>
-        </ul>
-        </div>
-    </body>
+   <head>
+    <title>CSCE 242 Web Applications</title>
+    <link rel="stylesheet" href="styles.css">
+   </head> 
+   <body>
+        <header id="main-h">
+            <h1 id="name-title">Jada Young</h1>
+            <h2 id="main-title">CSCE 242: Website Applications</h2>
+            <h3 id="sub3-title">Assignments</h3>
+        </header>
+        <main id="content">
+            <div id="gallery" class="columns">
+                <section class="one">
+                    <a class="box-header" href="assignments/01-basic-html/index.html">
+                        <h3>Assignment 1- Basic HTML</h3>
+                    </a>
+                    <div><img src="Screenshot 2026-01-23 at 5.05.12 PM (1).jpg" alt="Basic Html Picture"></div>
+                    <p>This assignment gave us the opportunity to apply basic
+                        html. We had to implement a page and include headers, paragraphs,
+                        and images. We also had to implement a bulleted list, a table, and two
+                        external links. 
+                    </p>
+                </section>
+                <section class="one" id="box-1">
+                    <a class="box-header" href="assignments/assignment-2/index.html">
+                        <h3>Assignment 2- Basic CSS</h3>
+                    </a>
+                    <div><img src="Screenshot 2026-01-23 at 5.27.16 PM.jpg" alt="Basic CSS Picture"></div>
+                    <p>This assignment gave us the opportunity to apply basic css
+                        to our webpage. We had to implement cool colors that followed
+                        a certain color scheme. We also had to pick a background image
+                        and adjust the shadow so the picture could appear through the secondary background.
+                    </p>
+                </section>
+                <section class="one">
+                    <h3 class="box-header">Assignment 3 - Page Layout</h3>
+                    <div>300x500</div>
+                    <p>Im some text</p>
+                </section>
+            </div>
+        </main>
+        <h4 id="sub4-title">Projects</h4>
+        <main id="content">
+            <div id="gallery" class="columns">
+                <section class="one">
+                    <a class="box-header" href="file:///Users/jadayoung/Downloads/Project%20Part%201%20Topic%20Selection.pdf">
+                        <h3>Project 1</h3>
+                    </a>
+                    <div><img src="Screenshot 2026-01-23 at 5.39.43 PM (1).jpg" alt="Project Picture"></div>
+                    <p>This will guide you to my project proposal page.
+                        My idea that I came up with for my personal website
+                        is a site where you will be able to order tents for your event.
+                        The great thing is you don't have to come and put them up, all you 
+                        have to do is show up to your event!
+                    
+                    </p>
+                </section>
+            </div>
+        </main>
+        
+        <footer>
+            <h4 id="footer-text">@Jada Young</h4>
+            
+        </footer>
+
+   </body>
 </html>

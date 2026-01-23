@@ -1,31 +1,105 @@
 /* Structure */
 body {
     background: lightcoral;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display:block;
+    border-radius: 4px;
 }
 
 /* Typography */
-h1 {
+#name-title {
     color: blanchedalmond;
+    width: 95%;
+    margin: auto;
+    font-size: 20px;
 }
 
 #main-title {
-    font-style: helvetica;
-}
-
-h2 {
     color: darkred;
+    padding: 0px;
+    text-align: center;
+    font-size: 30px;
 }
 
-#h2-content {
-    font-style: oblique;
+#sub3-title {
+    color: blanchedalmond;
+    text-align: center;
+    font-size: 35px;
 }
 
-p {
+.box-header {
+    color: darkred;
+    text-align: center;
+}
+
+/* Gallery Section */
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    background: darkred;
+    padding:  28px;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+/* Gallery Card */
+#gallery .one {
+    flex: 0 1 320px;
+    background: blanchedalmond;
+    padding: 18px;
+    border-radius: 6px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+#gallery .one p {
+    text-align: center;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
     color: maroon;
 }
 
-#para-text {
-    font-style: helvetica;
+#sub4-title {
+    color: blanchedalmond;
+    text-align: center;
+    font-size: 35px;
+}
+
+#footer-text {
+    color: blanchedalmond;
+    text-align: center;
+    
+}
+
+/* larger devices */
+@media (min-width: 768px) {
+    .columns {
+        display:flex;
+    }
+
+    .one {
+        flex: 1;
+    }
+    .two {
+        flex: 2;
+    }
+    .three {
+        flex: 3;
+    }
+    .four {
+        flex: 4;
+    }
 }
 
 /* Navigation */
