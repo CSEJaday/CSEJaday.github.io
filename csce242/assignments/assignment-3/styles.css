@@ -1,0 +1,329 @@
+/* Structure */
+body {
+    background: #F5F3DC;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #4E6E73;
+}
+
+/* Main Page Content */
+#main-c {
+    width: 100%;
+    margin: 0 auto 60px; 
+}
+
+/* Header */
+#main-h {
+    background: #F5F3DC;
+    padding: 15px 0;
+    text-align: center; 
+}
+
+#vip {
+   color: #4E6E73;
+   padding-top: 20%;
+}
+
+/* Navigation */
+#main-n ul {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    background: transparent;
+    align-items: center;
+}
+
+#main-n li {
+    background: #DE8A8A;
+    margin: 0;
+    padding: 8px;
+    border-bottom: 1px solid #B8D0C8;
+}
+
+#main-n a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+/* Top Row Flexbox */
+.columns {
+    display: block;
+    gap: 24px;
+    padding: 20px 16px;
+    box-sizing: border-box;
+}
+
+.two {
+    flex: 2;
+    padding-right: 24px;
+    box-sizing: border-box;
+}
+
+/* Left Heading */
+.two h2 {
+    margin: 0 0 8px;
+    font-size: 28px;
+    text-align: left;
+}
+
+.four {
+    flex: 4;
+    box-sizing: border-box;
+}
+
+.card-row {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+/* Card Layout */
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    background: #B6D0CC;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+}
+
+/* Card Title */
+.card h3 {
+    position: absolute;
+    top: -14px;
+    left:-18px;
+    right: -18px;
+    margin: 0 5px;
+    padding: 8px;
+    background: #4E6E73;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    display: block;
+}
+
+.card p {
+    margin: 20px 0 0;
+    color: white;
+}
+
+#content {
+    background: #F5F3DC;
+}
+
+#content h2 {
+    text-align: left;
+}
+
+/* Typography */
+#main-h h1 {
+    text-align: center;
+}
+
+#main-h h2 {
+    text-align: left;
+}
+
+/* Idea rows */
+.ideas {
+    max-width: 1100px;
+    width: 86%;
+    margin: 24px auto; 
+}
+
+/* Formatting single rows */
+.idea-row {
+    display: flex;
+    gap: 24px;
+    border-bottom: 5px solid #F5F3DC;
+    border-top: 5px solid #F5F3DC;
+    align-items: flex-start;
+    padding: 0px 20px;
+    background:#4E6E73;
+    color: white;
+}
+
+
+/* Different color row */
+.idea-row-diff {
+    background:#B6D0CC;
+    color: white;
+    border-bottom: 2px solid #F5F3DC;
+    border-top: 2px solid #F5F3DC;
+    display: flex;
+    align-items: flex-start;
+    margin-left: auto;
+    padding: 0px 18px;
+}
+
+
+.pic-size-left {
+    width: 200px;
+    min-width: 200px;
+    height: 180px;
+    background: #B6D0CC;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    align-self: flex-start;
+}
+
+.pic-size-right {
+    width: 200px;
+    min-width: 200px;
+    height: 180px;
+    background: #4E6E73;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    align-self: flex-start;
+    margin-left: auto;
+}
+
+
+
+/* Header style for rows */
+.idea-text h4 {
+    margin: 0 0 8px;
+    font-size: 20px;
+    font: bold; 
+    padding-left: 0px; /* might need to change back to 300 */
+}
+
+/* Row paragraph styling */
+.idea-text p {
+    margin: 0px;
+    line-height: 1.3;
+    font-size: 15px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.idea-text {
+    flex: 1;
+    padding: 6px 0;
+}
+
+.idea-row-diff {
+    flex-direction: row-reverse;
+}
+
+/* Footer text */
+#footer-text {
+    color: white;
+    text-align: center;
+}
+
+/* Footer Layout */
+#footer-layout {
+    flex: 1;
+    background: #DE8A8A;
+    padding: 20px; /* exapnsion */
+    padding-bottom: 20px;
+}
+
+/* Smaller Devices */
+@media (max-width: 768px) {
+    #main-n ul {
+        gap: 0px;
+        
+    }
+    #main-n li {
+        width: 100%;
+
+    }
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+    .idea-text {
+        padding: 16px;
+        font-size: 1.1;
+        text-align: center;
+    }
+    .card-row {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 16px;;
+        align-items: center;
+    }
+    #vip {
+        padding-bottom: 20px;
+        padding-top: 0px;
+    }
+    .card { /* 200 x 200*/
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .card p {
+        width: 200px;
+        height: auto;
+        margin: 20px 0;
+    }
+    .card h3 {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        width: 270%;
+    }
+} 
+@media (max-width: 768px) {
+    .card h3 {
+        padding-left: 16px;
+        padding-right: 16px;
+        box-sizing: border-box;
+    }
+}
+
+/* Larger Devices */
+@media (min-width: 768px) {
+    .columns {
+        display: flex;
+    }
+    .one {
+        flex: 1;
+    }
+    .two {
+        flex: 2;
+    }
+    .three {
+        flex: 3;
+    }
+    .four {
+        flex: 4;
+    }
+
+    #main-n ul {
+        display: flex;
+        gap: 2px;
+        background-color: #B8D0C8;
+    }
+
+    #main-n li {
+        flex: 1;
+        gap: 2;
+    }
+
+    #main-n a:hover {
+        filter: brightness(0.95);
+        border-bottom: 1px green;
+    }
+
+}
+
