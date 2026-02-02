@@ -12,6 +12,7 @@ body {
 
 #main-header {
     background-color: #FF6201;
+    position: relative;
 
 }
 
@@ -23,6 +24,77 @@ body {
 #main-footer {
 
 }
+
+/*Header */
+#logo {
+    margin: 10px;
+}
+
+#login-nav { /* sign up and login button */
+    position: absolute;
+    right: 5%;
+    top: 5%;
+}
+
+#login-nav li:not(:last-child)::after {
+    content:"|";
+}
+
+/* Images */
+img {
+    max-width: 100%; /* means it will not grow beyond its container */
+}
+
+
+.arrow {
+    font: 1.5em;
+    color: white;
+    position: absolute;
+    top: 32%;
+}
+
+#prev {
+    left: 5%;
+}
+
+#next {
+    right: 5%;
+}
+
+#slide-desc {
+    position: absolute;
+    bottom: 10%;
+    left: 5%;
+    color: white;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px;
+    max-width: 40%;
+}
+/* Square */
+.area {
+    position: relative;
+}
+
+#square { /*creates square within box */
+    width: 100px;
+    height: 100px;
+    background: red;
+
+    /* position absolute is in respect to the upper left hand corner 
+    position: absolute; /* moves red box up 
+    top: 50px; /* top overrides bottom 
+    left: 80px;
+    bottom: 0px;
+    right: 50px;
+    */
+
+    /*position: relative;  saves the spot for it */
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    
+}
+
 
 /* Gallery Section */
 #gallery {
@@ -36,13 +108,21 @@ body {
     text-align: center;
 }
 
+/* Area */
+.area {
+    /*height: 400px;*/
+    background: pink;
+    /* margin: 10px; paces in between */
+    /*width: 49%; */
+}
+
 /* Navigation */
-#main-nav ul {
+nav ul {
     padding-left: 0; /* Remove indentation */
 
 }
 
-#main-nav li { /* li is within the main nav*/
+nav li { /* li is within the main nav*/
     list-style-type: none; /* Remove bullet */
     background: #E57C04;
     padding: 5px;
@@ -50,7 +130,7 @@ body {
 
 }
 
-#main-nav a {
+nav a {
     text-decoration: none; /* Remove underline */
 }
 
@@ -60,8 +140,17 @@ body {
     padding-top: 10px;
 }
 
+/* img {
+max-width: 100%
+} */
+
 /* larger devices */
 @media (min-width: 768px) {
+    #content {
+        justify-content: space-between; /* any extra space between items */
+        gap: 1em; /* what is the gap between your items */
+        /* flex-wrap: wrap*/
+    }
     .columns {
         display:flex;
     }
@@ -79,16 +168,16 @@ body {
         flex: 4;
     }
 
-    #main-nav ul {
+    nav ul {
         display:flex;
     }
 
-    #main-nav li {
+    nav li {
         background: transparent;
         flex:1;
     }
 
-    #main-nav a {
+    nav a {
         color: darkblue;
         border-bottom: 1px solid transparent;
     }
