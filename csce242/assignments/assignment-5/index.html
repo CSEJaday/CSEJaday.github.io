@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Assignment 5: JavaScript Buttons, Functions, and More</title>
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1 id="main-heading">Assignment 5</h1>
+            <h2 id="sub-heading">Introduction to JavaScript</h2>
+        </header>
+
+        <main>
+            <section class="gallery-container">
+                <div class="gallery" onclick="showTriangle()">
+                    <h2 class="box-title">Geometry</h2>
+                    <div id="triangle"></div>
+                </div>
+
+                <div class="gallery">
+                    <h2 class="box-title">Select A Date:</h2>
+                    <input type="date" id="date-input">
+                    <p id="date-output"></p>
+                </div>
+
+                <div class="gallery">
+                    <h2 class="box-title">Frame Image</h2>
+                    <img id="sun-pic" src="Cute-cartoon-sun-on-transparent-background-PNG (1).jpg" alt="Sun Picture" onclick="showBorder()">
+                </div> 
+
+            </section>
+        </main>
+    </body>
+</html>
