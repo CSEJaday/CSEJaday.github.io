@@ -128,6 +128,18 @@ nav a {
     text-decoration: none;  /* Remove underline */
 }
 
+/*Toggle Naviagtion three lines*/
+#toggle-nav div {
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    margin: 6px 0;
+}
+
+/*Hidding on small screens */
+.hide-small {
+    display: none;
+}
 /* Typography */
 #main-header h1 {
     text-align: center;
@@ -185,6 +197,14 @@ nav a {
 
     .item div {
         flex:5;
+    }
+
+    #toggle-nav {
+        display: none;
+    }
+
+    .hide-small {
+        display: flex; /*or block*/
     }
 
 }

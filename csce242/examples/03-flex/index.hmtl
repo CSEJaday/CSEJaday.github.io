@@ -8,7 +8,12 @@
         <div id="main-content">
             <header id="main-header">
                 <h1>Flex Demonstration</h1>
+                /*Navigation lines */
                 <nav id="main-nav">
+                    <div id="main-nav">
+                        <div></div>
+                        <div></div>
+                        <div></div>
                     <ul>
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About</a></li>

@@ -48,6 +48,80 @@ document.getElementById("a-click").onclick = (e) => {
     //console.log("CLICKED");
 };
 
+/*start and stop the ball from bouncing */
+document.getElementById("bounce-button").onclick = (e) => {
+   if(e.currentTarget.innerHTML.toLowerCase() == "start") {
+    e.currebttARGET.innerHTML = "Stop";
+    ball.classList.add("bounce");
+   } else {
+    e.currentTarget.innerHTML = "Start";
+    ball.classList.remove("bounce");
+   }
+}
+
+/*As the user is typing in the box the letter appears below*/
+/*Get code from portias repo */
+/*Plant Health*/
+document.getElementById("txt-num-days").onchange = (e) => {
+    const numEntered = parseInt(e.currentTarget.value);
+    const p = document.getElementById("p-plant-message");
+
+    if(numEntered <= 0) {
+        p.innerHTML = "Yay! We were fed today!";
+    } else if(numEntered <=2) {
+        p.innerHTML = "Im getting a little thirsty";
+    } else if(numEntered <= 5) {
+        p.innerHTML = "Im starting to wilt";
+    } else {
+        p.innerHTML = "You killed me :(";
+    }
+}
+
+//toggle nav
+document.querySelector("#main-nav ul").classList.toggle("hide-small");
+
+
+/* Start Button */
+startButton.onclick = (e) => {
+    //p.innerHTML = "Start";
+    /* Every second increase the count and display it */
+    countInterval = setInterval(()=>{
+        startButton.disabled = true;
+        p.innerHTML = count++;
+    },500);
+};
+
+/*Pause Button*/
+document.getElementById("pause-button").onclick = (e) => {
+    //p.innerHTML = "Pause";
+    clearInterval(countInterval);
+};
+
+/*Stop Button*/
+document.getElementById("stop-button").onclick = (e) => {
+    //p.innerHTML = "Pause";
+    count = 0;
+    clearInterval(countInterval);
+};
+
+/*count intervals*/
+const p = document.getElementById("p-count-display");
+let count = 0;
+let countInterval;
+const startButton = document.getElementById("start-button");
+
+/*Display the date*/
+setInterval(()=>{
+    const today = new Date();
+    const month = today.getMonth();
+    const day = today.getDay();
+    const year = today.getFullYear();
+    const seconds = today.getSeconds();
+    const minutes = today.getMinutes();
+    const hours = today.getHours();
+
+    document.getElementById("p-date").innerHTML = `${hours}:${minutes}:${seconds}, ${month}/${day}/${year}`;
+},500);
 
 
 

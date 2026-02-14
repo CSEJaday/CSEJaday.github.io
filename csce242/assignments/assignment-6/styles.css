@@ -1,0 +1,135 @@
+body {
+  background: #dad7cd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Headings */
+#main-heading {
+  color: #344e41;
+  text-align: center;
+}
+
+#sub-heading {
+  color: #a3b18a;
+  text-align: center
+}
+
+#exercise-heading {
+  text-align: center;
+  color:#344e41;
+}
+
+/* Box layout */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #344e41;
+  border: 2px solid #a3b18a;
+  padding: 10px;
+  min-height: 160px;
+}
+
+/* Box Heading */
+.box-title {
+  color: #a3b18a;
+  text-align: center;
+  margin-top: 8px;
+}
+
+#ymc-text {
+  color: #a3b18a;
+}
+
+#exercise-2 {
+  display: none;
+}
+
+/* Navigation */
+nav ul {
+  padding-left:0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav li:not(:last-child)::after {
+  content: "  |";
+  color: #344e41;
+}
+
+nav li {
+  padding:2px;
+}
+
+nav a {
+  text-decoration: none;  
+  color:#344e41;
+  font-weight: 20px;
+}
+
+#toggle-nav {
+  display: none;
+}
+
+/* Time Messages*/
+#min-display {
+  color: #a3b18a;
+}
+
+#range-message {
+  color: #a3b18a;
+}
+
+#countdown-msg {
+  color: #a3b18a;
+}
+
+
+@media (max-width: 768px) {
+    .gallery-container {
+      grid-template-columns: 1fr;         
+      gap: 0px;
+      padding: 5px;
+      padding-right: 50px;
+    }
+  
+    .gallery {
+      width: 100%;                       
+      min-height: 10px;
+      padding: 20px;
+    }
+  
+    #main-heading {
+      font-size: 32px;
+    }
+
+    #sub-heading {
+      font-size: 20px;
+    }
+
+    #toggle-nav {
+      display: block;
+      cursor: pointer;
+      color: #a3b18a;
+      position: absolute;
+      padding-top: 2px;
+      top: 14%;
+      left: 15px;
+    }
+
+    nav ul {
+      flex-direction: column;
+      align-items: left;
+      display: none;
+    }
+
+    nav ul.hide-small {
+      display: flex;
+    }
+
+    nav li:not(:last-child)::after {
+      content: none;
+    }
+
+  }

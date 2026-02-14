@@ -1,3 +1,18 @@
+/* CSS Variabes */
+:root {
+    --main-background: green;
+    --main-headers: orange;
+}
+
+body {
+    background:var(--main-background);
+}
+
+#p-date {
+    padding: 10px;
+    color: white;
+}
+
 #ball {
     background-color: cornflowerblue;
     width: 100px;
@@ -35,3 +50,11 @@
     color: white;
     text-align: center;
 }
+
+/* When the button is clicked, the background will be grey*/
+button:disabled {
+    background: grey;
+
+}
+
+
