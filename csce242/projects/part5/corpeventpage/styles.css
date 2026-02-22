@@ -1,0 +1,248 @@
+/*CSS Variables */
+:root {
+    --primary-color: #1e2a38; /*dark navy*/
+    --accent-color: #c89b3c; /*gold*/
+    --light-color: white;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px; 
+}
+
+/*Nav Logo*/
+.logo img {
+    height: 100px;
+    position: relative;
+    left: 20px;
+}
+
+/*Nav-links*/
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-right: 30px;
+    gap: 160px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/*Nav Quote Button*/
+.quote-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.quote-btn:hover {
+    background-color: var(--accent-color);
+}
+
+.tent-card {
+    background: #fff;
+    max-width: 1200px;
+    margin: auto;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/*Top Section*/
+.tent-top {
+    display: flex;
+    height: 580px;
+}
+  
+.tent-image {
+    flex: 2;
+}
+
+.tent-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*Bottom Section*/
+.tent-bottom {
+    display: flex;
+    padding: 50px;
+}
+  
+.tent-info-left {
+    flex: 2;
+    padding-right: 40px;
+}
+  
+.tent-info-left h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+  
+.tent-info-left span {
+    color: var(--accent-color);
+}
+  
+.tent-info-left p {
+    font-size: 20px;
+    color: var(--primary-color);
+}
+
+/* Right Side */
+.tent-info-right {
+    flex: 1;
+    padding-left: 40px;
+    border-left: 4px solid var(--accent-color);
+}
+  
+.tent-info-right h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+  
+.divider {
+    height: 2px;
+    width: 70%;
+    background: var(--accent-color);
+    margin-bottom: 20px;
+}
+  
+.highlight {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+#btt-btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-color);
+    padding: 14px 25px;
+    text-decoration-line: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+}
+  
+  /* Hover effect */
+  #btt-btn:hover {
+    background-color: var(--primary-color);
+}
+  
+
+/*Footer Styling*/
+.contact-strip {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.contact-strip p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: var(--light-color);
+    font-size: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+}
+
+/* mobile tweaks */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .logo img {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li a {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+    }
+
+    .hide-small {
+        display: none;
+    }
+
+    .tent-image {
+        background: 50vh;
+    } 
+    
+    .tent-image {
+      background-size: cover;      
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;               
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .hero-content, .tent-image .content {
+      padding: 24px;
+      max-width: 92%;
+    }
+
+    #btt-btn {
+     padding: 15px 10px;
+    }
+}

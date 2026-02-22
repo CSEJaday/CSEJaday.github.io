@@ -76,6 +76,14 @@ button:disabled {
     background:gray;
 }
 
+/*Tables*/
+table th, table td {
+    padding: 5px;
+}
+
+table {
+    border-collapse: collapse;
+}
 /* Navigation */
 #toggle-nav {
     position:absolute;

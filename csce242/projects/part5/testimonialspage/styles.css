@@ -1,0 +1,288 @@
+/*CSS Variables */
+:root {
+    --primary-color: #1e2a38; /*dark navy*/
+    --accent-color: #c89b3c; /*gold*/
+    --light-color: white;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px;  
+}
+
+/*Nav Logo*/
+.logo img {
+    height: 100px;
+    position: relative;
+    left: 20px;
+}
+
+/*Nav-links*/
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-right: 30px;
+    gap: 160px; 
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/*Nav Quote Button*/
+.quote-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.quote-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/*Body Background*/
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+    url("images/getaquotebckg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/*Head and Subheading*/
+#head-text {
+    margin-top: 10%;
+    text-align: center;
+    color: var(--light-color);
+    font-size: 35px;
+}
+
+#sub-text {
+    text-align: center;
+    color: var(--light-color);
+    font-size: 20px;
+}
+
+/*Testimonial Section*/
+.test-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 60px 20px;
+    gap: 30px;
+}
+
+.test-row {
+    display: flex;
+    gap: 40px;
+    align-items: stretch;
+    justify-content: center;
+    max-width: 980px;
+    width: 100%;
+}
+
+.test-card {
+    background: var(--primary-color);
+    padding: 36px;
+    width: 380px;
+    box-sizing: border-box;
+    color: var(--light-color);
+    border-radius: 2px;
+}
+
+.client-name {
+    font-size: 22px;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+}
+
+.stars {
+    margin-bottom: 12px;
+}
+
+.star {
+    color: var(--accent-color);
+    font-size: 20px;
+    margin-right: 6px;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.4);
+}
+
+/* date */
+.date {
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 14px;
+    font-weight: 600;
+}
+  
+  /* testimonial text */
+.test-text {
+    color: rgba(255,255,255,0.95);
+    line-height: 1.6;
+    font-size: 15px;
+    margin: 0;
+}
+  
+  /* dots under the cards */
+.dots {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 26px;
+}
+.dot {
+    width: 18px;
+    height: 18px;
+    background: rgba(200,155,60,0.3);
+    border-radius: 50%;
+    display: inline-block;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.35);
+}
+.dot.active {
+    background: var(--accent-color);
+    box-shadow: 0 4px 14px rgba(200,155,60,0.35);
+}
+
+/* Arrow styling */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* left side */
+.arrow-left {
+    left: 40px;
+}
+
+/* right side */
+.arrow-right {
+    right: 40px;
+}
+
+/*Footer Styling*/
+.contact-strip {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.contact-strip p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: var(--light-color);
+    font-size: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+}
+
+/*Small screens*/
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .logo img {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links li a {
+        width: 100%;
+        text-align: center;
+        padding: 14px;
+    }
+    
+    .test-card {
+        width: 90%;              /* makes cards wide instead of skinny */
+        max-width: 400px;        /* prevents them from getting too huge */
+        padding: 27px;
+        margin: 0 auto;
+        border-radius: 10px;
+    }
+    
+    .test-card h3 {
+        font-size: 18px;
+    }
+    
+    .test-card p {
+        font-size: 14px;
+        
+    }
+
+    .test-card .stars {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        flex-wrap: nowrap;   
+    }
+
+    .arrow-left {
+        left: 10px;
+    }
+
+    .arrow-right {
+        right: 10px;
+    }
+}

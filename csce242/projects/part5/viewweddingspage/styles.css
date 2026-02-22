@@ -1,0 +1,322 @@
+/*CSS Variables */
+:root {
+    --primary-color: #1e2a38; /*change to --navy*/
+    --accent-color: #c89b3c; /*change to --gold*/
+    --light-color: white; /*change to --white*/
+    --container-width: 1100px;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+}
+
+/*Nav Logo*/
+.logo img {
+    height: 100px;
+    position: relative;
+    left: 20px;
+}
+
+/*Nav-links*/
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-right: 30px;
+    gap: 160px;  
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/*Nav Quote Button*/
+.quote-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.quote-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/*Background Image/Hero section */
+.header-section {
+    position: relative;   
+    height: 80vh;
+    background:
+        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
+        url("images/vwbckg.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.front-pic {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;     
+    height: 450px;    
+    background-image: url("images/weddingeventpic.png");
+    background-size: cover;  
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* Title & underline*/
+.product-title {
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+/* container only for the product section (won't affect nav) */
+.ps-container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+}
+  
+/* the whole section (controls spacing/overlap) */
+.product-section {
+    background: var(--light-color);
+    padding: 3.5rem 0 4.5rem;
+    margin-top: -70px;           
+    position: relative;
+    z-index: 1;
+}
+  
+  
+/* decoration wrapper (centers line and makes it responsive) */
+.decorations {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+  
+/* the line should not force layout; use a max-width and let it shrink */
+.title-design-line {
+    width: 100%;
+    max-width: 650px;     
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* Subheading */
+.product-sub {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 25px;
+    margin: 0 0 2rem 0;
+}
+
+/* grid: left description + right specs */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;  
+    gap: 2.5rem;
+    align-items: start;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+/* left column */
+.product-desc p {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 10px;
+    line-height: 1.6;
+    margin: 0 0 1.25rem 0;
+}
+
+/* price styling */
+.starting-price {
+    color: var(--accent-color);
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-top: 1.6rem;
+}
+
+span {
+    color: var(--accent-color);
+}
+
+/* right column (specs) */
+.product-specs {
+    position: relative;
+    padding-left: 2.4rem; /* space for left vertical divider */
+}
+
+/* vertical divider (left side of specs) did not work*/
+.product-specs::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8%;
+    bottom: 8%;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--gold), rgba(201,153,74,0.7));
+    border-radius: 2px;
+}
+
+#specs-heading {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+  
+  /* spec list with circular bullets */
+  .spec-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1.15rem;
+}
+
+.spec-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin: 1.1rem 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    line-height: 1.35;
+    font-size: 1.05rem;
+}
+
+/* circular bullet */
+.spec-list li::marker { 
+    content: ""; 
+}
+
+.spec-list li::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  display: inline-block;
+  position: absolute;
+  left: -1.9rem;
+  top: 6px;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.0);
+}
+
+/* circular bullet - navy fill with gold rim */
+.spec-list li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: inline-block;
+    position: absolute;
+    left: -1.95rem;
+    top: 4px;
+    box-shadow: 0 0 0 6px var(--accent-color(201,153,74,0.08));
+}
+
+/*Footer Styling*/
+.contact-strip {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    
+}
+
+.contact-strip p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: var(--light-color);
+    font-size: 20px;
+}
+
+/*Small screens*/
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+
+    .logo img {
+        display: none;
+    }
+
+    .nav-links li {
+        width: 100%;
+        
+    }
+
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        color: var(--light-color);
+        background: var(--primary-color);      
+        border-bottom: 2px solid rgba(255,255,255,0.12);
+        box-sizing: border-box;
+    }
+
+    .quote-btn {
+        position: relative;
+        top: 1750px;
+        right: 190px;;
+    }
+}
+
+
