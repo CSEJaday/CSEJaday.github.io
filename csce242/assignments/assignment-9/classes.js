@@ -67,7 +67,7 @@ class Song {
         document.getElementById("id01").style.display = "block";
     }
 
-    
+
 }
 
 function closeModal() {
