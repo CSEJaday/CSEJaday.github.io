@@ -185,7 +185,6 @@ body {
 
 .menu-toggle {
     display: none;
-    font-size: 28px;
 }
 
 /* mobile tweaks */
@@ -199,6 +198,9 @@ body {
     }
 
     .menu-toggle {
+        margin-right: auto;
+        font-size: 28px;
+        margin-left: 5px;
         display: block;
         cursor: pointer;
     }

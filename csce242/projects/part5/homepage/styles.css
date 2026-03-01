@@ -63,7 +63,9 @@ body {
 /* Hero Section */
 .header-section {
     height: 50vh;
-    background-image: url("images/homepagebckg.jpg"); 
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
+    url("images/homepagebckg.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -76,7 +78,8 @@ body {
 
 .hero-content {
     position: relative;
-    color: var(--primary-color);
+    color: #F8F5F0;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.4);
     max-width: 800px;
 }
 
@@ -114,7 +117,6 @@ body {
 }
 
 /*Check Marks*/
-
 .feature-highlights {
     display: flex;
     justify-content: center;
@@ -224,7 +226,6 @@ body {
 
 .menu-toggle {
     display: none;
-    font-size: 28px;
 }
 
 @media (max-width: 768px) {
@@ -237,6 +238,9 @@ body {
     }
 
     .menu-toggle {
+        margin-right: auto;
+        font-size: 28px;
+        margin-left: 5px;
         display: block;
         cursor: pointer;
     }

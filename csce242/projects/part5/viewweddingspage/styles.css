@@ -14,9 +14,9 @@ body {
 .navbar {
     background-color: var(--light-color);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 20px 80px;
+    justify-content: space-between;
+    padding: 0 60px; 
 }
 
 /*Nav Logo*/
@@ -61,28 +61,37 @@ body {
     background-color: var(--accent-color);
 }
 
-/*Background Image/Hero section */
+/*Background Image/Hero section*/
 .header-section {
-    position: relative;   
-    height: 80vh;
+    position: relative;
+    min-height: 70vh;
     background:
-        linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)),
-        url("images/vwbckg.jpg");
+      url("images/vwbckg.png");
     background-size: cover;
     background-position: center;
+    overflow: hidden;
 }
 
 .front-pic {
-    position: absolute;
-    top: 70px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 700px;     
-    height: 450px;    
-    background-image: url("images/weddingeventpic.png");
-    background-size: cover;  
+    width: min(100%, 900px);
+    bottom: 20px;
+    aspect-ratio: 700 / 450; 
+    background-image: url("images/weddingpic.png");
+    background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    margin: 28px auto 0;
+    position: relative; 
+    border-radius: 6px;
+  box-shadow: 
+  0 35px 80px rgba(0, 0, 0, 0.45),
+  0 10px 25px rgba(0, 0, 0, 0.25);
+  transform: translateY(-10px);
+}
+
+.product-section {
+    margin-top: -20px;
+    position: relative;
+    z-index: 1;
 }
 
 
@@ -176,7 +185,7 @@ span {
 /* right column (specs) */
 .product-specs {
     position: relative;
-    padding-left: 2.4rem; /* space for left vertical divider */
+    padding-left: 2.4rem; 
 }
 
 /* vertical divider (left side of specs) did not work*/
@@ -278,44 +287,68 @@ span {
     font-size: 20px;
 }
 
+.menu-toggle {
+    display: none;
+}
+
 /*Small screens*/
 @media (max-width: 768px) {
     .navbar {
         padding: 0;
     }
 
-    .nav-links {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        gap: 0;
-    }
-
     .logo img {
         display: none;
     }
 
-    .nav-links li {
-        width: 100%;
-        
-    }
-
-    .nav-links li a {
+    .menu-toggle {
+        margin-right: auto;
+        font-size: 28px;
+        margin-left: 5px;
         display: block;
-        width: 100%;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        color: var(--light-color);
-        background: var(--primary-color);      
-        border-bottom: 2px solid rgba(255,255,255,0.12);
-        box-sizing: border-box;
+        cursor: pointer;
     }
 
-    .quote-btn {
-        position: relative;
-        top: 1750px;
-        right: 190px;;
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    #main-nav {
+        margin-right: auto;
+        gap: 5px;
+    }
+
+    .hide-small {
+        display: none;
+    }
+
+    .front-pic {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-specs {
+        padding-left: 0;
+    }
+
+    .spec-list li::before {
+        left: -1.6rem;
+    }
+
+    .header-section {
+        min-height: 60vh;
     }
 }
 
