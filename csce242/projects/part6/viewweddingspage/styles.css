@@ -1,0 +1,355 @@
+/*CSS Variables */
+:root {
+    --primary-color: #1e2a38; /*change to --navy*/
+    --accent-color: #c89b3c; /*change to --gold*/
+    --light-color: white; /*change to --white*/
+    --container-width: 1100px;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation */
+.navbar {
+    background-color: var(--light-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 60px; 
+}
+
+/*Nav Logo*/
+.logo img {
+    height: 100px;
+    position: relative;
+    left: 20px;
+}
+
+/*Nav-links*/
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding-right: 30px;
+    gap: 160px;  
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/*Nav Quote Button*/
+.quote-btn {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.quote-btn:hover {
+    background-color: var(--accent-color);
+}
+
+/*Background Image/Hero section*/
+.header-section {
+    position: relative;
+    min-height: 70vh;
+    background:
+      url("images/vwbckg.png");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+.front-pic {
+    width: min(100%, 900px);
+    bottom: 20px;
+    aspect-ratio: 700 / 450; 
+    background-image: url("images/weddingpic.png");
+    background-size: cover;
+    background-position: center;
+    margin: 28px auto 0;
+    position: relative; 
+    border-radius: 6px;
+  box-shadow: 
+  0 35px 80px rgba(0, 0, 0, 0.45),
+  0 10px 25px rgba(0, 0, 0, 0.25);
+  transform: translateY(-10px);
+}
+
+.product-section {
+    margin-top: -20px;
+    position: relative;
+    z-index: 1;
+}
+
+
+/* Title & underline*/
+.product-title {
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+/* container only for the product section (won't affect nav) */
+.ps-container {
+    width: 90%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0;
+}
+  
+/* the whole section (controls spacing/overlap) */
+.product-section {
+    background: var(--light-color);
+    padding: 3.5rem 0 4.5rem;
+    margin-top: -70px;           
+    position: relative;
+    z-index: 1;
+}
+  
+  
+/* decoration wrapper (centers line and makes it responsive) */
+.decorations {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+  
+/* the line should not force layout; use a max-width and let it shrink */
+.title-design-line {
+    width: 100%;
+    max-width: 650px;     
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* Subheading */
+.product-sub {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 700;
+    font-size: 25px;
+    margin: 0 0 2rem 0;
+}
+
+/* grid: left description + right specs */
+.product-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;  
+    gap: 2.5rem;
+    align-items: start;
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+/* left column */
+.product-desc p {
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 10px;
+    line-height: 1.6;
+    margin: 0 0 1.25rem 0;
+}
+
+/* price styling */
+.starting-price {
+    color: var(--accent-color);
+    font-weight: 800;
+    font-size: 1.25rem;
+    margin-top: 1.6rem;
+}
+
+span {
+    color: var(--accent-color);
+}
+
+/* right column (specs) */
+.product-specs {
+    position: relative;
+    padding-left: 2.4rem; 
+}
+
+/* vertical divider (left side of specs) did not work*/
+.product-specs::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8%;
+    bottom: 8%;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--gold), rgba(201,153,74,0.7));
+    border-radius: 2px;
+}
+
+#specs-heading {
+    margin: 0 0 1rem 0;
+    color: var(--primary-color);
+    font-size: 1.35rem;
+    font-weight: 800;
+}
+  
+  /* spec list with circular bullets */
+  .spec-list {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 1.15rem;
+}
+
+.spec-list li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin: 1.1rem 0;
+    color: var(--primary-color);
+    font-weight: 700;
+    line-height: 1.35;
+    font-size: 1.05rem;
+}
+
+/* circular bullet */
+.spec-list li::marker { 
+    content: ""; 
+}
+
+.spec-list li::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  display: inline-block;
+  position: absolute;
+  left: -1.9rem;
+  top: 6px;
+  box-shadow: 0 0 0 6px rgba(255,255,255,0.0);
+}
+
+/* circular bullet - navy fill with gold rim */
+.spec-list li::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary-color);
+    display: inline-block;
+    position: absolute;
+    left: -1.95rem;
+    top: 4px;
+    box-shadow: 0 0 0 6px var(--accent-color(201,153,74,0.08));
+}
+
+/*Footer Styling*/
+.contact-strip {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 20px;
+    
+}
+
+.contact-strip p {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.contact-info p {
+    margin: 0;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: var(--light-color);
+    font-size: 20px;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/*Small screens*/
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0;
+    }
+
+    .logo img {
+        display: none;
+    }
+
+    .menu-toggle {
+        margin-right: auto;
+        font-size: 28px;
+        margin-left: 5px;
+        display: block;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    #main-nav {
+        margin-right: auto;
+        gap: 5px;
+    }
+
+    .hide-small {
+        display: none;
+    }
+
+    .front-pic {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-specs {
+        padding-left: 0;
+    }
+
+    .spec-list li::before {
+        left: -1.6rem;
+    }
+
+    .header-section {
+        min-height: 60vh;
+    }
+}
+
+

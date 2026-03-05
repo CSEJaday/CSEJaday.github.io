@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get a Quote</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header class="navbar">
+            <div class="logo">
+                <a href="../homepage/index.html"><img src="images/mvptentslogo.jpg" alt="MVP Tents Logo"></a>
+            </div>
+            <div id="toggle-nav" class="menu-toggle">☰</div>
+            <nav id="main-nav">
+                <ul class="nav-links">
+                    <li><a href="../homepage/index.html">Home</a></li>
+                    <li><a href="../aboutuspage/about.html">About Us</a></li>
+                    <li><a href="../servicespage/servicepage.html">Services</a></li>
+                    <li><a href="../testimonialspage/testimonials.html">Testimonials</a></li>
+                </ul>
+            </nav>
+            <a href="../getaquotepage/getaquote.html" class="quote-btn">Get a Quote</a>
+        </header>
+
+        <div class="head-section">
+          <section>
+            <h1 class="gaq-head">Get a Quote</h1>
+          </section>
+
+          <section>
+            <h2 class="gaq-head">Request a quote today and let us help make your event unforgettable!</h2>
+          </section>
+        </div>
+
+        <div class="grey-box">
+            <h2 class="card-title">Request a Free Quote</h2>
+            <p class="card-sub">Its simple! Fill out the form below!</p>
+
+            <form>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="full-name">Full Name:</label>
+                        <input class="input" type="text" id="fullname" name="fullname" required>
+                    </div>
+
+                    <div class="col">
+                        <label for="phone">Phone Number:</label>
+                        <input class="input" type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col">
+                        <label for="email">Email Address:</label>
+                        <input class="input" type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="col">
+                        <label for="eventtype">Event Type:</label>
+                        <input class="input" type="text" id="eventtype" name="eventtype">
+                    </div>
+                </div>
+
+                <div class="event-date">
+                    <label for="eventdate">Event Date:</label>
+                    <input class="input" type="date" id="eventdate" name="eventdate">
+                </div>
+
+                <div class="event-date">
+                    <label for="details">Additional Details:</label>
+                    <textarea class="input" id="details" name="details" rows="3"></textarea>
+                </div>
+
+                <div class="btn-quote">
+                    <a href="../quotesentpage/quotesent.html">Get My Quote</a>
+                </div>
+            </form>
+
+            <p id="questions">
+                Have questions? Call us at 803-xxx-xxxx 
+                or email us at MVPTents@gmail.com
+            </p>
+
+        </div>
+        <script src="js/script.js"></script> 
+    </body>
+</html>
