@@ -1,6 +1,27 @@
 [
     {
         "_id": 1,
+        "title": "Weddings",
+        "category": "Weddings",
+        "featured": true,
+        "img_name": "images/weddingeventpic.jpg"
+    },
+    {
+        "_id": 2,
+        "title": "Sport Events",
+        "category": "Sport Events",
+        "featured": true,
+        "img_name": "images/sportingeventpic.png"
+    },
+    {
+        "_id": 3,
+        "title": "Corporate Events",
+        "category": "Corporate",
+        "featured": true,
+        "img_name": "images/corpeventpic.jpg"
+    },
+    {
+        "_id": 1,
         "title": "40' x 60' Wedding Tent",
         "category": "Weddings",
         "startingPrice": 1200,
@@ -67,9 +88,6 @@
         "category": "Festival & Sports",
         "description": "Ideal for festivals, fairs, sports tournaments, and other large outdoor gatherings.",
         "img_name": "images/sportingeventpic.png"
-    },
-    {
-        
     }
 
 ]
