@@ -1,0 +1,75 @@
+[
+    {
+        "_id": 1,
+        "title": "40' x 60' Wedding Tent",
+        "category": "Weddings",
+        "startingPrice": 1200,
+        "dimensions": "40 feet by 60 feet",
+        "capacity": "Up to 200 guests",
+        "materials": "High-peak farme tent, white fabric",
+        "description": "Spacious and elegant, perfect for your special day. Includes setup with lighting, tables and chairs available.",
+        "extraFeeServices": "Lighting, tables, chairs",
+        "img_name": "images/weddingpic.png"
+    },
+    {
+        "_id": 2,
+        "title": "60' x 100' Festival Tent",
+        "category": "Sport Events",
+        "startingPrice": 2500,
+        "dimensions": "60 feet by 100 feet",
+        "capacity": "Up to 600 guests",
+        "materials": "Pole tent, heavy-duty fabric",
+        "description": "Large tent suited for sporting events, expos, and festivals.",
+        "extraFeeServices": "Staging, portable restrooms, security anchors",
+        "img_name": "images/sportingeventpic.png"
+    },
+    {
+        "_id": 3,
+        "title": "40' x 80' Reception Tent",
+        "category": "Corporate",
+        "startingPrice": 1600,
+        "dimensions": "40 feet by 80 feet",
+        "capacity": "Up to 300 guests",
+        "materials": "High-peak frame tent",
+        "description": "Elegant setup for corporate dinners, awards, and gatherings.",
+        "extraFeeServices": "AV package, carpeting",
+        "img_name": "images/corpeventpic.jpg"
+    },
+    {
+        "_id": 4,
+        "title": "Corporate Event Tent - 30' x 40' Frame Tent",
+        "category": "Corporate",
+        "startingPrice": 2500,
+        "dimensions": "30 feet by 40 feet",
+        "capacity": "Up to 120 guests",
+        "materials": "Frame tent, white fabric",
+        "description": "Our 30’ x 40’ frame tent is perfect for corporate gatherings, company picnics, and other business functions. It can comfortably accommodate up to 120 guests, offering a professional and elegant space for your event.",
+        "extraFeeServices": "Tables, chairs, lighting",
+        "img_name": "images/corporateeventpic.png"
+    },
+    {
+        "_id": 5,
+        "title": "Perfect For Wedding Rentals",
+        "category": "Wedding",
+        "description": "Make your special day unforgettable with our gorgeous wedding tents.",
+        "img_name": "images/weddingeventpic.png"
+    },
+    {
+        "_id": 6,
+        "title": "Perfect For Corporate Event Rentals",
+        "category": "Corporate",
+        "description": "Perfect for corporate gatherings, company pick-nicks, and other business functions.",
+        "img_name": "images/corporateeventpic.png"
+    },
+    {
+        "_id": 7,
+        "title": "Perfect For Festival & Sport Event Tents",
+        "category": "Festival & Sports",
+        "description": "Ideal for festivals, fairs, sports tournaments, and other large outdoor gatherings.",
+        "img_name": "images/sportingeventpic.png"
+    },
+    {
+        
+    }
+
+]

@@ -1,0 +1,35 @@
+{
+    "aboutCards": [
+        {
+            "id": 1,
+            "title": "Who are we?",
+            "image": "images/Working man 1.png",
+            "text": "We are a team of tent providers, originally from South Carolina. We started our business in 2024!"
+        },
+        {
+            "id": 2,
+            "title": "Why choose MVP Tents",
+            "image": "images/People Talking 2.png",
+            "text": "We have top quality and elegant tents, our customer service is like no other, and we have options to fit your needs!"
+        }
+    ],
+    "owners": [
+        {
+            "id": 1,
+            "name": "David Griffin",
+            "role": "Owner & Operations Director",
+            "photo": "images/Working man 2.png",
+            "bio": "Dave handles quotes and leads the tent setup. Dave also has 3+ years in event layout planning — he makes sure every tent is perfect.",
+            "email": "dave@example.com"
+        },
+        {
+            "id": 2,
+            "name": "Jack Simpson",
+            "role": "Owner & Operations Director",
+            "photo": "images/Family pic.png",
+            "bio": "Jack handles quotes and tent setup. With 3+ years in event planning, he makes sure every tent is perfect.",
+            "email": "jack@example.com"
+        }
+    ],
+    "quoteText": "Our mission is to make your outdoor event truly special and stress-free, with a beautiful tent that exceeds your expectations."
+}
