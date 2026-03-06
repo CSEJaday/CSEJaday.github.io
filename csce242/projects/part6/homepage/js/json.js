@@ -1,8 +1,11 @@
-const base_url = "https://csejaday.github.io/csce242/projects/part6/json/tent.json";
+const dataUrl = "https://csejaday.github.io/csce242/projects/part6/json/tent.json";
+const siteRoot = "https://csejaday.github.io/csce242/projects/part6";
+
 const getTents = async () => {
-  const url = `${base_url}/json/tent.json`;
-  const response = await fetch(url);
-  if (!response.ok) throw new Error('Failed to fetch tents.json: ' + response.status);
+  const response = await fetch(dataUrl);
+  if (!response.ok) {
+    throw new Error('Failed to fetch tents.json: ' + response.status);
+  }
   return response.json();
 };
 
@@ -11,9 +14,6 @@ const makeP = (title, content) => {
   p.innerHTML = `<strong>${title}</strong> ${content}`;
   return p;
 };
-
-// Helper to get the site root for building image URLs (images folder lives at site root)
-const siteRoot = base_url; // images referenced as `${siteRoot}/images/...` if you keep images in /images
 
 const showTents = async () => {
   const tents = await getTents();
