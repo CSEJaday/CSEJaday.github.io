@@ -5,15 +5,15 @@ async function fetchJson(url) {
   const res = await fetch(url);
   console.log("fetch", url, "status:", res.status, "ok:", res.ok);
   if (!res.ok) throw new Error(`Failed to fetch ${url}: ${res.status}`);
+  // parse and return JSON
   return res.json();
 }
 
 function buildImgUrl(path) {
-  if (!path) return "../images/placeholder.png";
-  if (/^https?:\/\//i.test(path)) return path;
-  // if already "../" keep it; otherwise prefix
-  return path.startsWith("../") ? path : `../${path.replace(/^\/+/, "")}`;
-}
+    if (!path) return "images/placeholder.png";
+    if (/^https?:\/\//i.test(path)) return path;
+    return path; // just use JSON path directly
+  }
 
 function makeElem(tag, className, text) {
   const el = document.createElement(tag);
@@ -24,7 +24,6 @@ function makeElem(tag, className, text) {
 
 async function showServices() {
   console.log("showServices: looking for container '#services-tent-cards'");
-  // attempt to find container; we'll create one if it's not present
   let container = document.querySelector("#services-tent-cards") || document.querySelector(".services-cards");
   if (!container) {
     console.warn("No container found with id '#services-tent-cards' or class '.services-cards'. Creating one inside .features (or body).");
@@ -40,15 +39,31 @@ async function showServices() {
 
   try {
     const data = await fetchJson(dataUrl);
+    console.log("raw JSON:", data);
 
-    // Make sure we have an array
-    const itemsArr = Array.isArray(data) ? data : (Array.isArray(data.services) ? data.services : []);
-    console.log("Loaded JSON items count:", itemsArr.length);
+    // Try several plausible ways to extract an array of items:
+    let itemsArr = [];
+    if (Array.isArray(data)) itemsArr = data;
+    else if (Array.isArray(data.services)) itemsArr = data.services;
+    else if (Array.isArray(data.items)) itemsArr = data.items;
+    else if (data && typeof data === "object") {
+      // fallback: object keyed by id -> convert to array
+      itemsArr = Object.values(data).filter(v => v && typeof v === "object");
+    }
 
-    const selected = itemsArr.filter(i => i && [8,9,10].includes(i._id));
+    console.log("Resolved items length:", itemsArr.length);
+
+    // tolerate string or number _id values
+    const wantedIds = new Set([8,9,10].map(String)); // {"8","9","10"}
+    const selected = itemsArr.filter(i => i && (wantedIds.has(String(i._id)) || wantedIds.has(i._id)));
     console.log("Filtered items (ids 8,9,10):", selected);
 
-    container.innerHTML = ""; // safe now because container exists
+    container.innerHTML = ""; // clear existing
+
+    if (selected.length === 0) {
+      container.innerHTML = `<p class="services-empty">No matching services found.</p>`;
+      return;
+    }
 
     selected.forEach(item => {
       const card = makeElem("div", "service-card");
@@ -57,14 +72,22 @@ async function showServices() {
       img.className = "service-image";
       img.src = buildImgUrl(item.img_name || "");
       img.alt = item.title || "service";
-      // fallback image on error
-      img.onerror = () => { img.src = "../images/placeholder.png"; };
+      // fallback image on error, but avoid infinite loop
+      img.addEventListener("error", function handleImgError() {
+        img.removeEventListener("error", handleImgError);
+        if (img.src && img.src.indexOf("placeholder.png") === -1) {
+          img.src = "../images/placeholder.png";
+        } else {
+          // last resort: use data-url or hide image
+          img.style.display = "none";
+        }
+      });
 
       const heading = makeElem("h3", "service-heading", item.title || "");
       const desc = makeElem("p", "service-desc", item.description || "");
 
       const btn = makeElem("a", "learn-btn", "Learn More");
-      btn.href = "#";
+      btn.href = item.url || "#";
 
       card.appendChild(img);
       card.appendChild(heading);
@@ -75,7 +98,6 @@ async function showServices() {
     });
 
   } catch (err) {
-    // Show a visible warning and log details
     console.error("Error loading services:", err);
     container.innerHTML = `<p class="services-error">Unable to load services (${escapeHtml(err.message)}). See console for details.</p>`;
   }
