@@ -62,7 +62,7 @@ body,html {
 
 /* About Us Section Background*/
 body {
-    background-image: url("images/aboutuspagebckg.jpg");
+    background-image: url("../images/aboutuspagebckg.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
