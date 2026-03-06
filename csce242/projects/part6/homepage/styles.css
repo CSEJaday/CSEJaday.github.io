@@ -65,7 +65,7 @@ body {
     height: 50vh;
     background: 
     linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.10)),
-    url("images/homepagebckg.jpg");
+    url("../images/homepagebckg.jpg");
     background-size: cover;
     background-position: center;
     display: flex;
