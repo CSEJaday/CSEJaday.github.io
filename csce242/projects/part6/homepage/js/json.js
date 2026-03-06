@@ -1,4 +1,4 @@
-const dataUrl = "https://raw.githubusercontent.com/CSEJaday/CSEJaday.github.io/refs/heads/main/csce242/projects/part6/json/tent.json";
+const dataUrl = "https://csejaday.github.io/csce242/projects/part6/json/tent.json";
 const siteRoot = "https://csejaday.github.io/csce242/projects/part6";
 
 const getTents = async () => {
