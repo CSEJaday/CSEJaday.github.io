@@ -1,5 +1,5 @@
 const siteRoot = "https://csejaday.github.io/csce242/projects/part6";
-const dataUrl = `${siteRoot}/json/about.json`;
+const dataUrl = `${siteRoot}/json/tent.json`;
 
 async function fetchJson(url) {
   const res = await fetch(url);
