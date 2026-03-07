@@ -70,21 +70,21 @@
     },
     {
         "_id": 8,
-        "title": "Perfect For Wedding Rentals",
+        "title": "Wedding Rentals",
         "category": "Wedding",
         "description": "Make your special day unforgettable with our gorgeous wedding tents.",
         "img_name": "images/weddingeventpic.png"
     },
     {
         "_id": 9,
-        "title": "Perfect For Corporate Event Rentals",
+        "title": "Corporate Event Rentals",
         "category": "Corporate",
         "description": "Perfect for corporate gatherings, company pick-nicks, and other business functions.",
         "img_name": "images/corporateeventpic.png"
     },
     {
         "_id": 10,
-        "title": "Perfect For Festival & Sport Event Tents",
+        "title": "Festival & Sport Event Tents",
         "category": "Festival & Sports",
         "description": "Ideal for festivals, fairs, sports tournaments, and other large outdoor gatherings.",
         "img_name": "images/sportingeventpic.png"
