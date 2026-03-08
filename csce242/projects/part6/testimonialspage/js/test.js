@@ -1,63 +1,66 @@
 // js/test.js
-const DATA_URL = "https://csejaday.github.io/csce242/projects/part6/json/testimonials.json";
+const base_url = "https://csejaday.github.io/csce242/projects/part6/json";
 
-/* helpers */
-const el = (tag, cls, text, useInner = false) => {
-  const e = document.createElement(tag);
-  if (cls) e.className = cls;
-  if (text !== undefined) {
-    if (useInner) e.innerHTML = text;
-    else e.textContent = text;
-  }
-  return e;
+const getTestimonials = async () => {
+  const url = `${base_url}/testimonials.json`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`Failed to fetch ${url}: ${response.status}`);
+  return response.json();
 };
 
-const stars = (n) => {
-  n = Number(n) || 0;
-  return "★".repeat(Math.min(5, Math.max(0, n))) +
-         "☆".repeat(Math.max(0, 5 - n));
+const makeP = (title, content) => {
+  const p = document.createElement("p");
+  p.innerHTML = `<strong>${title}</strong> ${content}`;
+  return p;
 };
 
-async function renderTestimonials() {
-  const row = document.getElementById("test-row");
-  if (!row) {
-    console.warn("No #test-row found.");
-    return;
-  }
-
+const showTestimonials = async () => {
   try {
-    const res = await fetch(DATA_URL);
-    console.log("fetch testimonials:", res.status, res.ok);
-
-    if (!res.ok) {
-      throw new Error("Failed to fetch testimonials: " + res.status);
-    }
-
-    const data = await res.json();
-    const items = Array.isArray(data)
-      ? data
-      : (data.testimonials || Object.values(data));
-
-    if (!items || !items.length) {
-      row.innerHTML = "<p>No testimonials available.</p>";
+    const items = await getTestimonials();
+    const row = document.getElementById("test-row");
+    if (!row) {
+      console.warn("No #test-row element found — skipping testimonials.");
       return;
     }
 
+    // clear any existing content
     row.innerHTML = "";
 
-    items.forEach((it, i) => {
-      const card = el("div", "test-card");
+    // normalize to array if server returned an object wrapper
+    const list = Array.isArray(items) ? items : (items.testimonials || Object.values(items));
+    if (!list || !list.length) {
+      row.innerHTML = "<p class='test-empty'>No testimonials available.</p>";
+      return;
+    }
+
+    list.forEach((it, i) => {
+      // Create the same structure your slideshow expects: .test-card with children
+      const card = document.createElement("div");
+      card.className = "test-card";
       card.dataset.index = i;
 
-      const head = el("div", "test-head");
-      const name = el("h3", "test-name", it.name || "Anonymous");
-      const rating = el("div", "test-rating", stars(it.rating), true);
+      const head = document.createElement("div");
+      head.className = "test-head";
+
+      const name = document.createElement("h3");
+      name.className = "test-name";
+      name.textContent = it.name || "Anonymous";
+
+      const rating = document.createElement("div");
+      rating.className = "test-rating";
+      // simple star string (use innerHTML if you need markup)
+      const r = Number(it.rating) || 0;
+      rating.innerHTML = "★".repeat(Math.min(5, Math.max(0, r))) + "☆".repeat(Math.max(0, 5 - r));
 
       head.appendChild(name);
       head.appendChild(rating);
 
-      const date = el("div", "test-date", it.date || "");
-      const text = el("p", "test-text", it.text || "");
+      const date = makeP("Date:", it.date || "");
+      date.className = "test-date";
+
+      const text = document.createElement("p");
+      text.className = "test-text";
+      text.textContent = it.text || "";
 
       card.appendChild(head);
       card.appendChild(date);
@@ -66,14 +69,18 @@ async function renderTestimonials() {
       row.appendChild(card);
     });
 
-    console.log(`Rendered ${items.length} testimonials.`);
+    console.log(`Rendered ${list.length} testimonials.`);
+    // notify slideshow that cards are ready
+    document.dispatchEvent(new Event('testimonials:loaded'));
+
+
 
   } catch (err) {
     console.error("Error loading testimonials:", err);
-    row.innerHTML =
-      `<p class="test-error">Unable to load testimonials.</p>`;
+    const row = document.getElementById("test-row");
+    if (row) row.innerHTML = `<p class="test-error">Unable to load testimonials: ${err.message}</p>`;
   }
-}
+};
 
-/* run after DOM ready */
-document.addEventListener("DOMContentLoaded", renderTestimonials);
+// run immediately
+showTestimonials();
