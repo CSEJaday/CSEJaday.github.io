@@ -1,13 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slides = Array.from(document.querySelectorAll('.test-card')); // get all testimonal cards
-    const dots = Array.from(document.querySelectorAll('.dot')); // existing dots in HTML
+    const dots = Array.from(document.querySelectorAll('.dot')); // existing dot
     const prevBtn = document.querySelector('.arrow-left');
     const nextBtn = document.querySelector('.arrow-right');
   
-    // no slided stop the script
     if (!slides.length) return;
-  
-    // ensure exactly one slide starts as active
     slides.forEach(s => s.classList.remove('current'));
     let current = 0;
     slides[current].classList.add('current'); // show first slide

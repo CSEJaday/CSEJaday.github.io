@@ -1,5 +1,3 @@
-// about.js
-// Adjust siteRoot if your site lives somewhere else
 const siteRoot = "https://csejaday.github.io/csce242/projects/part6";
 const dataUrl = `${siteRoot}/json/about.json`;
 
@@ -36,7 +34,7 @@ async function showAbout() {
     return;
   }
 
-  // Render the two "aboutCards"
+  // render the two about cards
   const aboutContainer = document.querySelector('.About-us-cards') || document.querySelector('#about-cards');
   if (aboutContainer && Array.isArray(data.aboutCards)) {
     // clear any existing
@@ -61,7 +59,7 @@ async function showAbout() {
     });
   }
 
-  // Render owners
+  // render owner cards
   const ownersContainer = document.querySelector('.owners-container') || document.getElementById('owners-container');
   if (ownersContainer && Array.isArray(data.owners)) {
     ownersContainer.innerHTML = '';
@@ -90,14 +88,13 @@ async function showAbout() {
     });
   }
 
-  // Render quoteText
+  // render quote text at the end
   if (data.quoteText) {
     const qEl = document.getElementById('quote-text') || document.querySelector('.quote-text');
     if (qEl) qEl.textContent = data.quoteText;
   }
 }
 
-// run it
 document.addEventListener('DOMContentLoaded', () => {
   showAbout().catch(e => console.error(e));
 });

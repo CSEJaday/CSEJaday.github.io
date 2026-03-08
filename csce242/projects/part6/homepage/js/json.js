@@ -17,8 +17,6 @@ const makeP = (title, content) => {
 
 const showTents = async () => {
   const tents = await getTents();
-
-  // find page-specific container
   const homeContainer = document.getElementById("tent-cards");
   const servicesContainer = document.getElementById("services-tent-cards");
   const container = homeContainer || servicesContainer;
@@ -26,7 +24,6 @@ const showTents = async () => {
 
   container.innerHTML = "";
 
-  // Choose items to render:
   let toShow;
   if (homeContainer) {
     // homepage: prefer featured items, otherwise use the first 3
@@ -75,7 +72,6 @@ const showTents = async () => {
   });
 };
 
-// Run it
 showTents().catch(err => {
   console.error('Error in showTents():', err);
   // Optionally show a user-visible message
