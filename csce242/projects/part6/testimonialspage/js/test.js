@@ -1,50 +1,52 @@
+// js/test.js
 const TEST_URL = "https://csejaday.github.io/csce242/projects/part6/json/testimonials.json";
 
-async function loadTestimonials() {
+function make(tag, cls, text, useInnerHTML = false) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) {
+    if (useInnerHTML) e.innerHTML = text;
+    else e.textContent = text;
+  }
+  return e;
+}
+function stars(n) { n = Number(n) || 0; return "★".repeat(n) + "☆".repeat(Math.max(0, 5 - n)); }
+
+async function loadTestimonialsData() {
+  const row = document.getElementById("test-row");
+  if (!row) { console.warn("No #test-row found — testimonials skipped."); return; }
+
   try {
     const res = await fetch(TEST_URL);
-    console.log("fetch testimonials:", res.status, res.ok);
-
-    if (!res.ok) throw new Error("Failed to load testimonials");
+    console.log("fetch testimonials:", TEST_URL, res.status, res.ok);
+    if (!res.ok) throw new Error(`Failed to fetch testimonials: ${res.status}`);
 
     const data = await res.json();
+    const items = Array.isArray(data) ? data : (data.testimonials || Object.values(data));
+    if (!items || !items.length) { row.innerHTML = "<p class='test-empty'>No testimonials available.</p>"; return; }
 
-    const container = document.getElementById("test-row");
-    if (!container) return;
-
-    container.innerHTML = "";
-
-    data.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "test-card"; // use whatever class your CSS expects
-
-      const name = document.createElement("h3");
-      name.textContent = item.name;
-
-      const rating = document.createElement("div");
-      rating.className = "rating";
-      rating.textContent = "★".repeat(item.rating);
-
-      const date = document.createElement("div");
-      date.className = "test-date";
-      date.textContent = item.date;
-
-      const text = document.createElement("p");
-      text.textContent = item.text;
-
-      card.appendChild(name);
-      card.appendChild(rating);
-      card.appendChild(date);
-      card.appendChild(text);
-
-      container.appendChild(card);
+    row.innerHTML = ""; // clear existing
+    items.forEach((it, i) => {
+      const card = make("div", "test-card");
+      const head = make("div", "test-head");
+      const name = make("h3", "test-name", it.name || "Anonymous");
+      const rating = make("div", "test-rating", stars(it.rating), true);
+      head.appendChild(name); head.appendChild(rating);
+      const date = make("div", "test-date", it.date || "");
+      const text = make("p", "test-text", it.text || "");
+      card.appendChild(head); card.appendChild(date); card.appendChild(text);
+      card.dataset.index = i;
+      row.appendChild(card);
     });
 
+    console.log(`Rendered ${items.length} testimonial cards into #test-row.`);
+    // If your slideshow provides an init function, call it here:
+    if (typeof window.initTestimonials === "function") window.initTestimonials();
+
   } catch (err) {
-    console.error("Error loading testimonials:", err);
-    const container = document.getElementById("test-row");
-    if (container) container.innerHTML = "<p>Unable to load testimonials.</p>";
+    console.error("Error loading testimonials JSON:", err);
+    row.innerHTML = `<p class="test-error">Unable to load testimonials: ${err.message}</p>`;
   }
 }
 
-document.addEventListener("DOMContentLoaded", loadTestimonials);
+document.addEventListener("DOMContentLoaded", loadTestimonialsData);
