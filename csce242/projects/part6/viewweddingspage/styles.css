@@ -76,7 +76,7 @@ body {
     width: min(100%, 900px);
     bottom: 20px;
     aspect-ratio: 700 / 450; 
-    background-image: url("images/weddingpic.png");
+    background-image: url("../images/weddingpic.png");
     background-size: cover;
     background-position: center;
     margin: 28px auto 0;

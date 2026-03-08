@@ -23,12 +23,13 @@
     {
         "_id": 4,
         "title": "40' x 60' Wedding Tent",
+        "sub-title": "Spacious and elegant, perfect for your special day. Includes setup with lighting, tables and chairs available.",
         "category": "Weddings",
         "startingPrice": 1200,
         "dimensions": "40 feet by 60 feet",
         "capacity": "Up to 200 guests",
         "materials": "High-peak farme tent, white fabric",
-        "description": "Spacious and elegant, perfect for your special day. Includes setup with lighting, tables and chairs available.",
+        "description": "Our 40’ x 60’ wedding tent can accommodate up to 200 guests, providing an ideal space for ceremony, receptions and celebrations. Enjoy the peace of mind with our full set up lighting, tables, and chairs, ensuring a beautiful and stress-free experience for your special day.",
         "extraFeeServices": "Lighting, tables, chairs",
         "img_name": "images/weddingpic.png"
     },
