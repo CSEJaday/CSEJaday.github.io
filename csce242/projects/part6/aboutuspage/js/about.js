@@ -77,7 +77,7 @@ async function showAbout() {
       const name = makeElem('h3', 'owner-name', owner.name || '');
       const role = makeElem('p', 'owner-role', owner.role || '');
       const bio = makeElem('p', 'owner-bio', owner.bio || '');
-      const a = makeElem('a', 'owner-email', 'Email');
+      const a = makeElem('a', 'owner-email', owner.email ? owner.email : 'No email available');
       a.href = owner.email ? `mailto:${owner.email}` : '#';
 
       card.appendChild(img);

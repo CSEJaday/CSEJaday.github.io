@@ -139,11 +139,8 @@ label {
 }
 
 /*Quote Button*/
-.btn-quote {
+.btn-quote button {
     margin-top: 25px;
-}
-
-.btn-quote a {
     display: inline-block;
     background-color: var(--accent-color);
     color: var(--light-color);
@@ -153,7 +150,7 @@ label {
     font-weight: bold;
 }
 
-.btn-quote a:hover {
+.btn-quote button:hover {
     background-color: var(--primary-color);
 }
 

@@ -35,7 +35,7 @@
             <h2 class="card-title">Request a Free Quote</h2>
             <p class="card-sub">Its simple! Fill out the form below!</p>
 
-            <form method="post">
+            <form id="contact-form" method="post">
                 <input type="hidden" name="access_key" value="f68b1ede-6a0a-476b-961a-6ff461248dd0">
                 <div class="form-row">
                     <div class="col">
@@ -57,13 +57,13 @@
 
                     <div class="col">
                         <label for="eventtype">Event Type:</label>
-                        <input class="input" type="text" id="eventtype" name="eventtype">
+                        <input class="input" type="text" id="eventtype" name="eventtype" required>
                     </div>
                 </div>
 
                 <div class="event-date">
                     <label for="eventdate">Event Date:</label>
-                    <input class="input" type="date" id="eventdate" name="eventdate">
+                    <input class="input" type="date" id="eventdate" name="eventdate" required>
                 </div>
 
                 <div class="event-date">
@@ -72,7 +72,7 @@
                 </div>
 
                 <div class="btn-quote">
-                    <p class="btn-quote"><button type="submit">Get My Quote</a></p>
+                    <button type="submit">Get My Quote</button>
                 </div>
             </form>
 
@@ -81,7 +81,10 @@
                 or email us at MVPTents@gmail.com
             </p>
 
+            <div id="contact-result"></div>
+
         </div>
+        <script src="js/contact.js"></script>
         <script src="js/script.js"></script> 
     </body>
 </html>
